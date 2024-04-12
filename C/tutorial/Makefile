@@ -28,3 +28,9 @@ wordCount:
 
 histogramWord:
 	gcc -o obj/histogramWord histogramWord.c
+
+maxLine:
+	gcc -o obj/maxLine maxLine.c
+
+simpleStruct:
+	gcc -o obj/simpleStruct simpleStruct.c
