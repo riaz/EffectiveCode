@@ -19,3 +19,12 @@ farenheitCelsiusParams:
 
 characterIO:
 	gcc -o obj/characterIO characterIO.c
+
+characterCount:
+	gcc -o obj/characterCount characterCount.c
+
+wordCount:
+	gcc -o obj/wordCount wordCount.c
+
+histogramWord:
+	gcc -o obj/histogramWord histogramWord.c
