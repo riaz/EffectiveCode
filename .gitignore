@@ -1,2 +1,3 @@
 # object files
 C/tutorial/obj*
+*__pycache__*
