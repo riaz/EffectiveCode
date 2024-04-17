@@ -55,7 +55,7 @@ if __name__ == '__main__':
     cache.put(10,3)
     cache.put(20,10)
     cache.put(30,50)
-    cache.put(40,100)
+    cache.put(40,100) 
 
     print(cache.get(40))
 
