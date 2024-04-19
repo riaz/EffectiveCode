@@ -56,5 +56,34 @@ def test_get_head_tail():
     assert param_4 == 30   
 
     
+def test_delete_at_index():    
+    obj = MyLinkedList()
+
+    obj.addAtHead(1)
+    obj.addAtTail(3)
+    obj.addAtIndex(1, 2)
+
+    assert 2 == obj.get(1)
+
+    obj.deleteAtIndex(1)
+
+    assert 3 == obj.get(1)
+
+
+def test_delete_at_index_small():    
+    obj = MyLinkedList()
+    obj.addAtHead(1)
+    obj.deleteAtIndex(0)
+
+def test_delete_at_index_med():    
+    obj = MyLinkedList()
     
-    
+    obj.addAtHead(1)
+    obj.addAtHead(3)
+    obj.addAtIndex(1,2)
+
+    assert 2 == obj.get(1)
+
+    obj.deleteAtIndex(0)
+
+    assert 2 == obj.get(0)

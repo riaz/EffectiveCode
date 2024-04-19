@@ -95,11 +95,16 @@ class MyLinkedList:
                 prev = tmp
                 tmp = tmp.next
             
-            if tmp and tmp.next: # if not tail
-                prev.next = tmp.next
+            if not prev:
+                # move head
+                # when its the only element in the array
+                # get back normal
+                self.head = self.head.next                
             else:
-                prev.next = None
-                self.tail = prev
-            
+                if tmp and tmp.next: # if not tail
+                    prev.next = tmp.next
+                else:
+                    prev.next = None
+                    self.tail = prev                              
             self._size -= 1 # increment the size
         
