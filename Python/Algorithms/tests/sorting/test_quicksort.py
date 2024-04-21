@@ -1,4 +1,4 @@
-from algo import quicksort
+from algo.sorting import quicksort
 
 def test_quicksort():
     arr = [5,6,2,5,1,4]
