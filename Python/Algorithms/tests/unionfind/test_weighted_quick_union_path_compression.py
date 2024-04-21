@@ -1,12 +1,14 @@
-from algo.unionfind import QuickUnion
+from algo.unionfind import WeightedQuickUnionPC
 
-def test_quickunion():
+def test_weighted_quick_union_with_path_compression():
     N = 10
-    uf = QuickUnion(N)
+    uf = WeightedQuickUnionPC(N)
 
     assert len(uf.arr) == N # note: the array was set by the ABC
 
     assert uf.arr == list(range(len(uf.arr))) # this is what the constructor would assign
+
+    assert uf.height == [1] * N
 
     uf.union(0,1)
     uf.union(5,9)
