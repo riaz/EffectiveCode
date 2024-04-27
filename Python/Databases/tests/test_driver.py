@@ -21,10 +21,11 @@ def test_select_query():
     db = get_db_connection()
 
     db.connect()
+    
+    schema_name = "demo"
+    table_name = "Account"
 
-    table_name = 'demo."Account"'
-
-    select = Select(table_name, db.conn)
+    select = Select(table_name, schema_name, db.conn)
 
     stmt = select.get_by_columns()
 

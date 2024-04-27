@@ -1,0 +1,1 @@
+DB_SCHEMA = "information_schema.columns"
