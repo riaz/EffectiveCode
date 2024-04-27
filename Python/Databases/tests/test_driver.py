@@ -1,17 +1,5 @@
-from db.driver import DBConnection
+from .helper import get_db_connection
 from db.select import Select
-
-
-def get_db_connection():
-    hostname = "localhost"
-    user = "riaz"
-    database = "riaz"
-    password = ""
-    port = 5432
-
-    db = DBConnection(hostname, user, database, port, password)
-
-    return db
 
 def test_connect():
     """
@@ -42,6 +30,12 @@ def test_select_query():
 
     db.execute(stmt)
 
-    db.fetch_result()
+    data = db.fetch_result()
+
+    assert len(data) == 2 # this should include the columns and one single row
+
+    assert data[0] == ["id", "first_name", "last_name", "email", "mobile"] # this the list of columns in the table
+
+    assert data[1] == [1, 'riaz', 'munshi', 'riaz.2012@gmail.com', 7164319964]
 
     db.close()

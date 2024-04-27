@@ -30,6 +30,6 @@ class Select:
         This uses the pandas library to read records as a pandas table
         """
         try:
-            df = pd.read_sql(query, conn=self.conn)
+            df = pd.read_sql(query, con=self.conn)
         except Exception as e:
             raise ConnectionError("Unable to query the database into a dataframe")

@@ -1,5 +1,5 @@
 import psycopg2
-from typing import Any
+from typing import Any, List
 import pandas as pd
 
 class DBConnection:
@@ -53,14 +53,18 @@ class DBConnection:
         except Exception as e:
             raise ConnectionError(f"Unable to execute the query {statement}")
         
-    def fetch_result(self) -> None:
+    def fetch_result(self) -> List[List[Any]]:
         """
         This function returns the result from the database as a list
         """
         try:
             rows = self.cur.fetchall()
-            for row in rows:
-                print(row)
+            column_names = [desc[0] for desc in self.cur.description]
+            out = []
+            out.append(column_names) # persisting the columns as the first row of the data
+            for row in rows: 
+                out.append(list(row))                
+            return out
         except ValueError as e:
             raise ValueError("No rows to fetch")
         except ConnectionError as ce:
