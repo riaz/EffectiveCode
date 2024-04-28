@@ -54,4 +54,6 @@ def test_get_schema():
 
     schema = select.get_schema()
 
-    print(schema)
+    assert len(schema) == 5
+
+    db.close()
