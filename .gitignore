@@ -3,3 +3,7 @@ C/tutorial/obj*
 *__pycache__*
 
 *vscode/*
+
+# Training related
+*mlruns*
+*test-trainer*
