@@ -1,0 +1,13 @@
+torch
+torchvision 
+torchaudio
+pandas
+torchdata
+torchtext
+spacy
+altair
+jupytext
+flake8
+black
+GPUtil
+wandb

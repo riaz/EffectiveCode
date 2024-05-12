@@ -11,3 +11,6 @@ C/tutorial/obj*
 *json*
 
 .env
+
+# Go specific
+*__debug_*
