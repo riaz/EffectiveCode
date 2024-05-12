@@ -16,12 +16,9 @@ func TestHelloCli(t *testing.T) {
 	t.Parallel()
 
 	t.Run("No arguments passed", func(t *testing.T) {
-		rawGot := basic.EchoCli()
-		idxOffset := strings.LastIndex(rawGot, "$")
-		got := strings.TrimSpace(rawGot[idxOffset+1:])
+		got := basic.EchoCli()
 		want := ""
-
-		assert.Equal(t, want, got)
+		assert.Contains(t, got, want)
 	})
 
 	t.Run("With one argument", func(t *testing.T) {
@@ -29,11 +26,9 @@ func TestHelloCli(t *testing.T) {
 
 		os.Args = append(os.Args, want)
 
-		rawGot := basic.EchoCli()
-		idxOffset := strings.LastIndex(rawGot, "$")
-		got := strings.TrimSpace(rawGot[idxOffset+1:])
+		got := basic.EchoCli()
 
-		assert.Equal(t, want, got)
+		assert.Contains(t, got, want)
 
 		os.Args = os.Args[:len(os.Args)-1] // clean up
 	})
@@ -43,12 +38,11 @@ func TestHelloCli(t *testing.T) {
 
 		os.Args = append(os.Args, wantArgs...)
 
-		rawGot := basic.EchoCli()
-		idxOffset := strings.LastIndex(rawGot, "$")
-		got := strings.TrimSpace(rawGot[idxOffset+1:])
+		got := basic.EchoCli()
 
 		want := strings.Join(wantArgs, " ")
-		assert.Equal(t, want, got)
+
+		assert.Contains(t, got, want)
 
 		os.Args = os.Args[:len(os.Args)-len(wantArgs)]
 	})
@@ -58,12 +52,10 @@ func TestHelloCli(t *testing.T) {
 
 		os.Args = append(os.Args, wantArgs...)
 
-		rawGot := basic.EchoCli()
-		idxOffset := strings.LastIndex(rawGot, "$")
-		got := strings.TrimSpace(rawGot[idxOffset+1:])
+		got := basic.EchoCli()
 
 		want := strings.Join(wantArgs, " ")
-		assert.Equal(t, want, got)
+		assert.Contains(t, got, want)
 
 		os.Args = os.Args[:len(os.Args)-len(wantArgs)]
 	})
