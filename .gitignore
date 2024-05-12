@@ -7,3 +7,7 @@ C/tutorial/obj*
 # Training related
 *mlruns*
 *test-trainer*
+
+*json*
+
+.env
