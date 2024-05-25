@@ -1,7 +1,8 @@
 # object files
 C/tutorial/obj*
 *__pycache__*
-
+*/build/*
+*egg_info*
 *vscode/*
 
 # Training related

@@ -47,26 +47,4 @@ class LRUCache:
         previous_end.next = node
         node.prev = previous_end
         node.next = self.tail
-
-if __name__ == '__main__':
-
-    cache = LRUCache(5)
-
-    cache.put(10,3)
-    cache.put(20,10)
-    cache.put(30,50)
-    cache.put(40,100) 
-
-    print(cache.get(40))
-
-    cache.put(40,300)
-    
-    print(cache.get(40))
-    
-    cache.put(50,400)    
-    
-    print(cache.get(40))
-    print(cache.get(20))
-    print(cache.get(30))
-    
     
