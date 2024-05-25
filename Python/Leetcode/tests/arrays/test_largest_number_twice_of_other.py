@@ -1,4 +1,4 @@
-from problems import largest_atleast_twice
+from problems.arrays import largest_atleast_twice
 
 def test_largest_atleast_twice():
     assert largest_atleast_twice([3,6,1,0]) == 1

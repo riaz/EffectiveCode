@@ -1,4 +1,4 @@
-from problems import find_pivox_index
+from problems.arrays import find_pivox_index
 
 def test_find_pivox_index():
     assert find_pivox_index([1]) == 0
