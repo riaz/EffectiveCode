@@ -13,4 +13,19 @@ func Test_Interfaces(t *testing.T) {
 
 	assert.Equal(t, 20.0, mbike.GetTopSpeed())
 	assert.Equal(t, 40.0, rbike.GetTopSpeed())
+
+	// type assertion checks
+	var mtBike basic.Bike = basic.MountainBike{Make: "MT"}
+
+	mb1 := mtBike.(basic.MountainBike)
+
+	assert.Equal(t, "MT", mb1.Make)
+
+	//var b basic.Bike
+
+	// type switch
+	typeVal, _ := basic.TypeSwitch(mbike)
+
+	assert.Equal(t, "Mountain Bike", typeVal)
+
 }

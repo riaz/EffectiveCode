@@ -41,3 +41,16 @@ func (m MountainBike) GetDistance(time float64) float64 {
 func (m RoadBike) GetDistance(time float64) float64 {
 	return (time * m.Topspeed)
 }
+
+func TypeSwitch(b Bike) (string, Bike) {
+	switch bike := b.(type) {
+	case MountainBike:
+		return "Mountain Bike", bike
+	case RoadBike:
+		return "Road Bike", bike
+	case Bike:
+		return "Generic Bike", bike
+	default:
+		return "Unknown Bike", bike
+	}
+}
