@@ -14,7 +14,6 @@ func Test_Fibonacci(t *testing.T) {
 	got := []int{}
 
 	for i := 0; i < 3; i++ {
-		//fmt.Println(f())
 		got = append(got, f())
 	}
 
