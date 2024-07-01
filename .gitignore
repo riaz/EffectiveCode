@@ -15,3 +15,5 @@ C/tutorial/obj*
 
 # Go specific
 *__debug_*
+
+*.DS_Store
