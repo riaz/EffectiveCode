@@ -5,11 +5,13 @@ Additionally we also want to do this generically and allow to pass the page we w
 Currently we just support get requests.
 """
 
+import requests
 import asyncio
 import httpx
 import aiohttp
 
 async def httpx_call(count: int, url: str = "https://en.wikipedia.org/wiki/Riaz"):
+    """ This is a httpx call. It support both sync and async http calls. """
     
     httpx_client = httpx.AsyncClient()
 
@@ -21,6 +23,7 @@ async def httpx_call(count: int, url: str = "https://en.wikipedia.org/wiki/Riaz"
         
 
 async def aiohttp_call(count: int, url: str = "https://en.wikipedia.org/wiki/Riaz"):
+    """ This is aiohttp and only support async http calls. """
 
     aiohttp_client = aiohttp.ClientSession()
 
@@ -30,4 +33,9 @@ async def aiohttp_call(count: int, url: str = "https://en.wikipedia.org/wiki/Ria
 
         await asyncio.gather(*tasks)
 
-        
+
+def requests_call(count: int, url: str = "https://en.wikipedia.org/wiki/Riaz"):
+    """ This is requests and only support sync http calls. """
+    
+    tasks = [requests.get(url) for _ in range(count)]
+   
