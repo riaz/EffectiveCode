@@ -17,4 +17,4 @@
 
 ### Here is a perf test with graph
 
-![Chart comparing http call perf](/Users/riaz/EffectiveCode/Python/Courses/PythonCookbook/files/http_perf_report.png)
+![Chart comparing http call perf](./files/http_perf_report.png)
